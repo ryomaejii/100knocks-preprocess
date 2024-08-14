@@ -9329,16 +9329,190 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">customer</span>
+<span class="k">WHERE</span>
+<span class="w">    </span><span class="n">status_cd</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s1">'^[A-F]'</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
+<span class="p">;</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+10 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>customer_id</th>
+<th>customer_name</th>
+<th>gender_cd</th>
+<th>gender</th>
+<th>birth_day</th>
+<th>age</th>
+<th>postal_cd</th>
+<th>address</th>
+<th>application_store_cd</th>
+<th>application_date</th>
+<th>status_cd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS031415000172</td>
+<td>宇多田 貴美子</td>
+<td>1</td>
+<td>女性</td>
+<td>1976-10-04</td>
+<td>42</td>
+<td>151-0053</td>
+<td>東京都渋谷区代々木**********</td>
+<td>S13031</td>
+<td>20150529</td>
+<td>D-20100325-C</td>
+</tr>
+<tr>
+<td>CS015414000103</td>
+<td>奥野 陽子</td>
+<td>1</td>
+<td>女性</td>
+<td>1977-08-09</td>
+<td>41</td>
+<td>136-0073</td>
+<td>東京都江東区北砂**********</td>
+<td>S13015</td>
+<td>20150722</td>
+<td>B-20100609-B</td>
+</tr>
+<tr>
+<td>CS011215000048</td>
+<td>芦田 沙耶</td>
+<td>1</td>
+<td>女性</td>
+<td>1992-02-01</td>
+<td>27</td>
+<td>223-0062</td>
+<td>神奈川県横浜市港北区日吉本町**********</td>
+<td>S14011</td>
+<td>20150228</td>
+<td>C-20100421-9</td>
+</tr>
+<tr>
+<td>CS029415000023</td>
+<td>梅田 里穂</td>
+<td>1</td>
+<td>女性</td>
+<td>1976-01-17</td>
+<td>43</td>
+<td>279-0043</td>
+<td>千葉県浦安市富士見**********</td>
+<td>S12029</td>
+<td>20150610</td>
+<td>D-20100918-E</td>
+</tr>
+<tr>
+<td>CS035415000029</td>
+<td>寺沢 真希</td>
+<td>9</td>
+<td>不明</td>
+<td>1977-09-27</td>
+<td>41</td>
+<td>158-0096</td>
+<td>東京都世田谷区玉川台**********</td>
+<td>S13035</td>
+<td>20141220</td>
+<td>F-20101029-F</td>
+</tr>
+<tr>
+<td>CS031415000106</td>
+<td>宇野 由美子</td>
+<td>1</td>
+<td>女性</td>
+<td>1970-02-26</td>
+<td>49</td>
+<td>151-0053</td>
+<td>東京都渋谷区代々木**********</td>
+<td>S13031</td>
+<td>20150201</td>
+<td>F-20100511-E</td>
+</tr>
+<tr>
+<td>CS029215000025</td>
+<td>石倉 美帆</td>
+<td>1</td>
+<td>女性</td>
+<td>1993-09-28</td>
+<td>25</td>
+<td>279-0022</td>
+<td>千葉県浦安市今川**********</td>
+<td>S12029</td>
+<td>20150708</td>
+<td>B-20100820-C</td>
+</tr>
+<tr>
+<td>CS033605000005</td>
+<td>猪股 雄太</td>
+<td>0</td>
+<td>男性</td>
+<td>1955-12-05</td>
+<td>63</td>
+<td>246-0031</td>
+<td>神奈川県横浜市瀬谷区瀬谷**********</td>
+<td>S14033</td>
+<td>20150425</td>
+<td>F-20100917-E</td>
+</tr>
+<tr>
+<td>CS033415000229</td>
+<td>板垣 菜々美</td>
+<td>1</td>
+<td>女性</td>
+<td>1977-11-07</td>
+<td>41</td>
+<td>246-0021</td>
+<td>神奈川県横浜市瀬谷区二ツ橋町**********</td>
+<td>S14033</td>
+<td>20150712</td>
+<td>F-20100326-E</td>
+</tr>
+<tr>
+<td>CS008415000145</td>
+<td>黒谷 麻緒</td>
+<td>1</td>
+<td>女性</td>
+<td>1977-06-27</td>
+<td>41</td>
+<td>157-0067</td>
+<td>東京都世田谷区喜多見**********</td>
+<td>S13008</td>
+<td>20150829</td>
+<td>F-20100622-F</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
