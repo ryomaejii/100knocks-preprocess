@@ -9127,16 +9127,190 @@ Deploy Streamlit apps for free on Ploomber Cloud! Learn more: https://ploomber.i
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">store</span>
+<span class="k">WHERE</span>
+<span class="w">    </span><span class="n">address</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%横浜市%'</span>
+<span class="p">;</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+11 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>store_cd</th>
+<th>store_name</th>
+<th>prefecture_cd</th>
+<th>prefecture</th>
+<th>address</th>
+<th>address_kana</th>
+<th>tel_no</th>
+<th>longitude</th>
+<th>latitude</th>
+<th>floor_area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S14010</td>
+<td>菊名店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市港北区菊名一丁目</td>
+<td>カナガワケンヨコハマシコウホククキクナイッチョウメ</td>
+<td>045-123-4032</td>
+<td>139.6326</td>
+<td>35.50049</td>
+<td>1732.0</td>
+</tr>
+<tr>
+<td>S14033</td>
+<td>阿久和店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市瀬谷区阿久和西一丁目</td>
+<td>カナガワケンヨコハマシセヤクアクワニシイッチョウメ</td>
+<td>045-123-4043</td>
+<td>139.4961</td>
+<td>35.45918</td>
+<td>1495.0</td>
+</tr>
+<tr>
+<td>S14040</td>
+<td>長津田店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市緑区長津田みなみ台五丁目</td>
+<td>カナガワケンヨコハマシミドリクナガツタミナミダイゴチョウメ</td>
+<td>045-123-4046</td>
+<td>139.4994</td>
+<td>35.52398</td>
+<td>1548.0</td>
+</tr>
+<tr>
+<td>S14050</td>
+<td>阿久和西店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市瀬谷区阿久和西一丁目</td>
+<td>カナガワケンヨコハマシセヤクアクワニシイッチョウメ</td>
+<td>045-123-4053</td>
+<td>139.4961</td>
+<td>35.45918</td>
+<td>1830.0</td>
+</tr>
+<tr>
+<td>S14028</td>
+<td>二ツ橋店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市瀬谷区二ツ橋町</td>
+<td>カナガワケンヨコハマシセヤクフタツバシチョウ</td>
+<td>045-123-4042</td>
+<td>139.4963</td>
+<td>35.46304</td>
+<td>1574.0</td>
+</tr>
+<tr>
+<td>S14012</td>
+<td>本牧和田店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市中区本牧和田</td>
+<td>カナガワケンヨコハマシナカクホンモクワダ</td>
+<td>045-123-4034</td>
+<td>139.6582</td>
+<td>35.42156</td>
+<td>1341.0</td>
+</tr>
+<tr>
+<td>S14046</td>
+<td>北山田店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市都筑区北山田一丁目</td>
+<td>カナガワケンヨコハマシツヅキクキタヤマタイッチョウメ</td>
+<td>045-123-4049</td>
+<td>139.5916</td>
+<td>35.56189</td>
+<td>831.0</td>
+</tr>
+<tr>
+<td>S14011</td>
+<td>日吉本町店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市港北区日吉本町四丁目</td>
+<td>カナガワケンヨコハマシコウホククヒヨシホンチョウヨンチョウメ</td>
+<td>045-123-4033</td>
+<td>139.6316</td>
+<td>35.54655</td>
+<td>890.0</td>
+</tr>
+<tr>
+<td>S14048</td>
+<td>中川中央店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市都筑区中川中央二丁目</td>
+<td>カナガワケンヨコハマシツヅキクナカガワチュウオウニチョウメ</td>
+<td>045-123-4051</td>
+<td>139.5758</td>
+<td>35.54912</td>
+<td>1657.0</td>
+</tr>
+<tr>
+<td>S14042</td>
+<td>新山下店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市中区新山下二丁目</td>
+<td>カナガワケンヨコハマシナカクシンヤマシタニチョウメ</td>
+<td>045-123-4047</td>
+<td>139.6593</td>
+<td>35.43894</td>
+<td>1044.0</td>
+</tr>
+<tr>
+<td>S14006</td>
+<td>葛が谷店</td>
+<td>14</td>
+<td>神奈川県</td>
+<td>神奈川県横浜市都筑区葛が谷</td>
+<td>カナガワケンヨコハマシツヅキククズガヤ</td>
+<td>045-123-4031</td>
+<td>139.5633</td>
+<td>35.53573</td>
+<td>1886.0</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
