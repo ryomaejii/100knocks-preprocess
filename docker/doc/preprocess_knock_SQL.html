@@ -11163,16 +11163,260 @@ Deploy Flask apps for free on Ploomber Cloud! Learn more: https://ploomber.io/s/
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [59]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="k">SUM</span><span class="p">(</span><span class="n">amount</span><span class="p">),</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">quantity</span><span class="p">)</span>
+<span class="k">FROM</span>
+<span class="w">    </span><span class="n">receipt</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span>
+<span class="w">    </span><span class="n">store_cd</span>
+<span class="p">;</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+52 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>sum</th>
+<th>sum_1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>638761</td>
+<td>2099</td>
+</tr>
+<tr>
+<td>748221</td>
+<td>2376</td>
+</tr>
+<tr>
+<td>587895</td>
+<td>1881</td>
+</tr>
+<tr>
+<td>100314</td>
+<td>250</td>
+</tr>
+<tr>
+<td>793773</td>
+<td>2432</td>
+</tr>
+<tr>
+<td>714550</td>
+<td>2303</td>
+</tr>
+<tr>
+<td>808870</td>
+<td>2486</td>
+</tr>
+<tr>
+<td>651328</td>
+<td>2047</td>
+</tr>
+<tr>
+<td>827833</td>
+<td>2541</td>
+</tr>
+<tr>
+<td>611888</td>
+<td>1981</td>
+</tr>
+<tr>
+<td>412646</td>
+<td>1354</td>
+</tr>
+<tr>
+<td>764294</td>
+<td>2197</td>
+</tr>
+<tr>
+<td>786145</td>
+<td>2458</td>
+</tr>
+<tr>
+<td>458484</td>
+<td>1398</td>
+</tr>
+<tr>
+<td>727821</td>
+<td>2340</td>
+</tr>
+<tr>
+<td>534689</td>
+<td>1935</td>
+</tr>
+<tr>
+<td>779373</td>
+<td>2390</td>
+</tr>
+<tr>
+<td>708884</td>
+<td>2337</td>
+</tr>
+<tr>
+<td>725167</td>
+<td>2358</td>
+</tr>
+<tr>
+<td>699511</td>
+<td>2231</td>
+</tr>
+<tr>
+<td>712839</td>
+<td>2284</td>
+</tr>
+<tr>
+<td>811936</td>
+<td>2347</td>
+</tr>
+<tr>
+<td>727630</td>
+<td>2258</td>
+</tr>
+<tr>
+<td>755581</td>
+<td>2394</td>
+</tr>
+<tr>
+<td>715869</td>
+<td>2219</td>
+</tr>
+<tr>
+<td>234276</td>
+<td>769</td>
+</tr>
+<tr>
+<td>720600</td>
+<td>2412</td>
+</tr>
+<tr>
+<td>736323</td>
+<td>2417</td>
+</tr>
+<tr>
+<td>728266</td>
+<td>2233</td>
+</tr>
+<tr>
+<td>824537</td>
+<td>2503</td>
+</tr>
+<tr>
+<td>790361</td>
+<td>2290</td>
+</tr>
+<tr>
+<td>780873</td>
+<td>2248</td>
+</tr>
+<tr>
+<td>809288</td>
+<td>2491</td>
+</tr>
+<tr>
+<td>230808</td>
+<td>788</td>
+</tr>
+<tr>
+<td>167090</td>
+<td>580</td>
+</tr>
+<tr>
+<td>705968</td>
+<td>2336</td>
+</tr>
+<tr>
+<td>787513</td>
+<td>2425</td>
+</tr>
+<tr>
+<td>520764</td>
+<td>1729</td>
+</tr>
+<tr>
+<td>725318</td>
+<td>2282</td>
+</tr>
+<tr>
+<td>794741</td>
+<td>2555</td>
+</tr>
+<tr>
+<td>693087</td>
+<td>2344</td>
+</tr>
+<tr>
+<td>684402</td>
+<td>2403</td>
+</tr>
+<tr>
+<td>790501</td>
+<td>2491</td>
+</tr>
+<tr>
+<td>653681</td>
+<td>2024</td>
+</tr>
+<tr>
+<td>701858</td>
+<td>2233</td>
+</tr>
+<tr>
+<td>629876</td>
+<td>2004</td>
+</tr>
+<tr>
+<td>338329</td>
+<td>1041</td>
+</tr>
+<tr>
+<td>805724</td>
+<td>2434</td>
+</tr>
+<tr>
+<td>790535</td>
+<td>2562</td>
+</tr>
+<tr>
+<td>796383</td>
+<td>2383</td>
+</tr>
+<tr>
+<td>107452</td>
+<td>354</td>
+</tr>
+<tr>
+<td>203694</td>
+<td>635</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
