@@ -12403,16 +12403,110 @@ Deploy Flask apps for free on Ploomber Cloud! Learn more: https://ploomber.io/s/
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [110]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">WITH</span><span class="w"> </span><span class="n">avg_of_amount</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">WITH</span><span class="w"> </span><span class="n">sum_of_amount_per_customer</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="k">SELECT</span>
+<span class="w">        </span><span class="n">customer_id</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">amount</span>
+<span class="w">        </span><span class="k">FROM</span>
+<span class="w">            </span><span class="n">receipt</span>
+<span class="w">        </span><span class="k">WHERE</span>
+<span class="w">            </span><span class="n">customer_id</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'Z%'</span>
+<span class="w">        </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span>
+<span class="w">            </span><span class="n">customer_id</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="w">    </span><span class="k">SELECT</span>
+<span class="w">        </span><span class="k">AVG</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">avg_amount</span>
+<span class="w">    </span><span class="k">FROM</span>
+<span class="w">        </span><span class="n">sum_of_amount_per_customer</span>
+<span class="p">)</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">customer_id</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">amount</span>
+<span class="k">FROM</span>
+<span class="w">    </span><span class="n">avg_of_amount</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">aa</span><span class="p">,</span><span class="w"> </span><span class="n">receipt</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">r</span>
+<span class="k">WHERE</span>
+<span class="w">    </span><span class="n">r</span><span class="p">.</span><span class="n">amount</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">aa</span><span class="p">.</span><span class="n">avg_amount</span>
+<span class="k">LIMIT</span>
+<span class="w">    </span><span class="mi">10</span>
+<span class="p">;</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>*  postgresql://padawan:***@db:5432/dsdojo_db
+10 rows affected.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[110]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>customer_id</th>
+<th>amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS039415000129</td>
+<td>2580</td>
+</tr>
+<tr>
+<td>ZZ000000000000</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>ZZ000000000000</td>
+<td>2680</td>
+</tr>
+<tr>
+<td>CS015515000083</td>
+<td>5280</td>
+</tr>
+<tr>
+<td>CS011415000006</td>
+<td>10925</td>
+</tr>
+<tr>
+<td>ZZ000000000000</td>
+<td>4760</td>
+</tr>
+<tr>
+<td>ZZ000000000000</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>CS035415000125</td>
+<td>4760</td>
+</tr>
+<tr>
+<td>ZZ000000000000</td>
+<td>4760</td>
+</tr>
+<tr>
+<td>ZZ000000000000</td>
+<td>4760</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
